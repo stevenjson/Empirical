@@ -58,7 +58,7 @@ namespace emp {
       return phenotype;
     }
 
-    void RecordMutation(std::unordered_map<std::string, int> muts) {
+    void RecordMutation(const std::unordered_map<std::string, int> & muts) {
       for (auto mut : muts) {
         if (Has(mut_counts, mut.first)) {
           mut_counts[mut.first] += mut.second;
@@ -72,7 +72,7 @@ namespace emp {
       fitness.Add(fit);
     }
 
-    void RecordPhenotype(PHEN_TYPE phen) {
+    void RecordPhenotype(const PHEN_TYPE & phen) {
       phenotype = phen;
     }
 
