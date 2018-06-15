@@ -151,6 +151,16 @@ namespace emp {
       name_map[name] = id;
     }
 
+    /// @brief Update an instruction in the set.
+    /// @param name A unique string name for this instruction.
+    /// @param fun_call The function that should be called when this instruction is executed.
+    void UpdateInst(const std::string &name,
+                 const fun_t &fun_call)
+    {
+      const size_t id = name_map[name];
+      inst_funs[id] = fun_call;
+    }
+
     /// Specify a keyword and arg value.
     void AddArg(const std::string & name, arg_t value) {
       emp_assert(!Has(arg_map, name));
